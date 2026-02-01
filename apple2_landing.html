@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for proper text display -->
+    <meta charset="UTF-8">
+    <!-- Viewport settings for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title that appears in browser tab -->
+    <title>JustAverageMatt.com</title>
+    
+    <!-- Google Fonts import for authentic pixelated Apple II CRT look font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset default browser styles for consistent appearance across all browsers */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Root element styles - sets CSS variables and base font properties */
+        :root {
+            /* Apple II iconic monochrome green color (actual phosphor green from vintage monitors) */
+            --apple-green: #22b14c;
+            /* Dark background color matching CRT monitor black */
+            --monitor-black: #0a0e27;
+            /* Alternative green for subtle accents and borders */
+            --terminal-green: #00d60f;
+        }
+
+        /* Body element - creates the full-screen Apple II monitor effect */
+        body {
+            /* Use pixelated retro font that captures the CRT tube look of original Apple II */
+            font-family: 'Press Start 2P', cursive;
+            
+            /* Apply the dark monitor background color */
+            background-color: var(--monitor-black);
+            
+            /* Display as flex container to center content */
+            display: flex;
+            /* Align items vertically in the center */
+            align-items: center;
+            /* Align items horizontally in the center */
+            justify-content: center;
+            /* Set full viewport height so background fills entire screen */
+            min-height: 100vh;
+            
+            /* Apply subtle grain texture overlay to simulate CRT monitor screen grain */
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03) 0px,
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+            
+            /* Cursor style - Apple II had a different cursor appearance */
+            cursor: default;
+            
+            /* Text color - Apple II green for all text on dark background */
+            color: var(--apple-green);
+            
+            /* Disable text selection for a more "system-like" feel */
+            user-select: none;
+        }
+
+        /* Main container - holds all content in the center */
+        .screen {
+            /* Add padding inside for breathing room */
+            padding: 40px 60px;
+            
+            /* Set maximum width to prevent text from stretching too wide */
+            max-width: 900px;
+            
+            /* Subtle shadow for depth perception */
+            box-shadow: 
+                0 0 30px rgba(34, 177, 76, 0.3);
+            
+            /* Text alignment - center all text inside */
+            text-align: center;
+            
+            /* Animation that creates a subtle pulsing glow effect like old monitors */
+            animation: monitorGlow 3s ease-in-out infinite;
+        }
+
+        /* Keyframe animation for the monitor glow effect */
+        @keyframes monitorGlow {
+            0%, 100% {
+                /* Normal glow state */
+                box-shadow: 
+                    0 0 30px rgba(34, 177, 76, 0.3);
+            }
+            50% {
+                /* Slightly brighter glow in the middle of the animation */
+                box-shadow: 
+                    0 0 40px rgba(34, 177, 76, 0.5);
+            }
+        }
+
+        /* Heading element - the main sign text */
+        h1 {
+            /* Size - large and prominent but smaller to fit on screen */
+            font-size: 1.5rem;
+            
+            /* Line height for readability */
+            line-height: 1.3;
+            
+            /* Add vertical margin for spacing from other elements */
+            margin-bottom: 30px;
+            
+            /* Use lighter green (terminal green) for the heading to make it stand out */
+            color: var(--terminal-green);
+            
+            /* Add letter spacing for that blocky 1980s computer look */
+            letter-spacing: 2px;
+            
+            /* Animation: typewriter effect where text appears character by character */
+            animation: typewriter 2s steps(30, end) once;
+            
+            /* Hide overflow during animation to create smooth typewriter effect */
+            overflow: hidden;
+            
+            /* Make text italic slightly for a stylized look (optional, can remove) */
+            font-style: normal;
+            
+            /* Add text shadow for glow effect like old monitor phosphor */
+            text-shadow: 
+                0 0 10px rgba(0, 214, 15, 0.8),
+                0 0 20px rgba(34, 177, 76, 0.4);
+        }
+
+        /* Keyframe animation for typewriter effect on the heading */
+        @keyframes typewriter {
+            from {
+                /* Start with zero width - text is hidden */
+                width: 0;
+            }
+            to {
+                /* Expand to full width - text is fully revealed */
+                width: 100%;
+            }
+        }
+
+        /* Paragraph element - holds the descriptive text below the heading */
+        p {
+            /* Larger font size for better readability */
+            font-size: 1.1rem;
+            
+            /* Space between lines of text */
+            line-height: 1.6;
+            
+            /* Add margin below the paragraph */
+            margin-bottom: 25px;
+            
+            /* Use standard Apple green for body text */
+            color: var(--apple-green);
+            
+            /* Subtle glow effect on text */
+            text-shadow: 0 0 5px rgba(34, 177, 76, 0.5);
+        }
+
+        /* Email address container - styled distinctly */
+        .email-section {
+            /* Add top margin for separation from other content */
+            margin-top: 40px;
+            
+            /* Add padding for breathing room */
+            padding: 20px;
+        }
+
+        /* Email address styling */
+        .email {
+            /* Make it stand out with brighter green */
+            color: var(--terminal-green);
+            
+            /* Larger font for email visibility */
+            font-size: 1.2rem;
+            
+            /* Remove default link styling */
+            text-decoration: none;
+            
+            /* Add underline for visual interest (like a hyperlink) */
+            border-bottom: 2px solid var(--terminal-green);
+            
+            /* Smooth transition for hover effects */
+            transition: all 0.2s ease;
+            
+            /* Cursor changes to pointer on hover */
+            cursor: pointer;
+            
+            /* Text glow */
+            text-shadow: 0 0 8px rgba(0, 214, 15, 0.6);
+        }
+
+        /* Hover state for email link - slight glow increase on mouseover */
+        .email:hover {
+            /* Increase text shadow for more prominent glow */
+            text-shadow: 0 0 15px rgba(0, 214, 15, 1);
+            
+            /* Slightly increase letter spacing for effect */
+            letter-spacing: 1px;
+        }
+
+        /* Apple II signature element - decorative footer text */
+        .apple-signature {
+            /* Add top margin for separation */
+            margin-top: 50px;
+            
+            /* Smaller font for footer text */
+            font-size: 0.85rem;
+            
+            /* Muted opacity to make it less prominent */
+            opacity: 0.7;
+            
+            /* Use standard Apple green */
+            color: var(--apple-green);
+        }
+
+        /* Responsive design for smaller screens (tablets and phones) */
+        @media (max-width: 600px) {
+            /* Reduce padding on smaller screens */
+            .screen {
+                padding: 30px 40px;
+            }
+            
+            /* Reduce heading size on mobile */
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+            
+            /* Adjust paragraph font size for mobile readability */
+            p {
+                font-size: 1rem;
+            }
+            
+            /* Adjust email font size for mobile */
+            .email {
+                font-size: 1rem;
+            }
+        }
+
+        /* Cursor blink animation - classic blinking cursor effect from old computers */
+        @keyframes blink {
+            0%, 49% {
+                /* Visible state */
+                opacity: 1;
+            }
+            50%, 100% {
+                /* Invisible state - creates blinking effect */
+                opacity: 0;
+            }
+        }
+
+        /* Blinking cursor element - adds authenticity */
+        .cursor {
+            /* Apply blink animation */
+            animation: blink 1s infinite;
+            
+            /* Display as inline block so it takes up space */
+            display: inline-block;
+            
+            /* Width of cursor line */
+            width: 2px;
+            
+            /* Height matches text */
+            height: 1em;
+            
+            /* Background color same as text */
+            background-color: var(--terminal-green);
+            
+            /* Small margin to separate from text */
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main screen container - creates the monitor border and content area -->
+    <div class="screen">
+        <!-- Main heading with the coming soon message -->
+        <h1>JustAverageMatt.com<br>Coming Eventually</h1>
+        
+        <!-- Description text -->
+        <p>Check back soon for something new</p>
+        
+        <!-- Email contact section -->
+        <div class="email-section">
+            <p style="margin-bottom: 10px; font-size: 0.9rem; opacity: 0.8;">Contact:</p>
+            <!-- Clickable email address -->
+            <a href="mailto:justaveragematt@gmail.com" class="email">justaveragematt@gmail.com</a>
+        </div>
+        
+        <!-- Apple II signature footer text -->
+        <div class="apple-signature">
+            The owner of this is busy<br>and lazy, so it may be a while.</div>
+    </div>
+</body>
+</html>
